@@ -1,0 +1,161 @@
+commit c28946810404b898370c6c24901293972ae1f5a6
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 13:24:39 2023 +0200
+
+```
+file2 ->file22
+
+```
+
+tiedostoja/file2             | 0
+tiedostoja/{file1 => file22} | 0
+2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f54857f0f54c72d7a68576e8a15604a224495b5d
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 13:12:54 2023 +0200
+
+```
+3filea
+
+```
+
+tiedostoja/file1 | 0
+tiedostoja/file2 | 0
+tiedostoja/file3 | 0
+3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1367eae4c77f58974df681095bd74ef4a82485bb
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 13:00:36 2023 +0200
+
+```
+hups
+
+```
+
+eka.txt | 1 +
+1 file changed, 1 insertion(+)
+
+commit a6e4b0884c5f7fb8f105a5d2fb3c245008c127f9
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 12:55:25 2023 +0200
+
+```
+tiedostoja muokattu add-p
+
+```
+
+eka.txt    | 9 ++++-----
+kolmas.txt | 3 ++-
+2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 62bbe6974d9809fad82fcc0707efca0913cb7720
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 12:51:17 2023 +0200
+
+```
+tiedosto.txt nimetty eka.txt
+
+```
+
+tiedosto.txt => eka.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 19c5cc45cffaa20357aba7b8cf64616a61f00375
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 12:48:28 2023 +0200
+
+```
+toinen.txt poistettu
+
+```
+
+toinen.txt | 1 -
+1 file changed, 1 deletion(-)
+
+commit 838bccea2a63c309ae3631e9fc0d5d536a748cc9
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:37:34 2023 +0200
+
+```
+tekstia muokattu x2
+
+```
+
+tiedosto.txt | 7 ++-----
+1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit 0e25bf387c9e3237880893cc50d8c1a7c9b5af32
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:35:57 2023 +0200
+
+```
+tekstia muokattu
+
+```
+
+tiedosto.txt | 11 +++++++++++
+1 file changed, 11 insertions(+)
+
+commit 3d4281fbfc1e1630eeea364aa33d6ae0d10410fb
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:26:19 2023 +0200
+
+```
+tiedosto ja kansio luotu
+
+```
+
+stuff/neljas.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6a9e0959ca6c3306ab52ac104168d50c7d5d3712
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:21:25 2023 +0200
+
+```
+muutos ja muutos
+
+```
+
+kolmas.txt | 1 +
+toinen.txt | 1 +
+2 files changed, 2 insertions(+)
+
+commit 715358f94dd8bb99aa4a7b553378711a57c0895f
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:18:37 2023 +0200
+
+```
+tiedosto luotu
+
+```
+
+kolmas.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7bac7c034f1f2cce972cdf8e0a5334c4f6df5bfe
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:09:50 2023 +0200
+
+```
+muutos ja lisäys
+
+```
+
+tiedosto.txt | 1 +
+toinen.txt   | 0
+2 files changed, 1 insertion(+)
+
+commit d867afc4ce75e2290840a16f5ea1dd68126b9e31
+Author: Elisa Mero [elisa.mero@helsinki.fi](mailto:elisa.mero@helsinki.fi)
+Date:   Thu Mar 16 11:04:21 2023 +0200
+
+```
+tiedosto.txt luotu
+
+```
+
+tiedosto.txt | 0
+1 file changed, 0 insertions(+), 0 deletions(-)

@@ -17,3 +17,10 @@ viimeinen muutos!
 [Screenshot](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/laskarit/viikko2/unicafe/Untitled.png)
 
 [Tyoaikakirjanpito](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
+**Viikko3**
+
+[Kaaviot](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/laskarit/viikko3/kaaviot.md)
+
+
+

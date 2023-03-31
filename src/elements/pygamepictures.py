@@ -2,3 +2,4 @@
 # säädä myös grafiikoiden värit yms tässä
 
 #import pygame
+

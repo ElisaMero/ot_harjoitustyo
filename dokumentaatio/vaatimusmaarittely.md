@@ -1,4 +1,6 @@
-**Tasohyppelypeli**
+**Tasohyppelypeli** 
+
+Pelin otsikoksi Jumping Game
 
 Alustava määrittelydokumentti
 
@@ -11,8 +13,10 @@ Perus toiminnallisuus:
 - pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja)
 - kolikoita, joita voi kerätä
 -- kun kerää kolikon, kolikkolaskuri kasvaa ja kolikon paikka vaihtuu
+-- Kerralla näkyvissä yksi kolikko, jonka paikka vaihtuu aina keräyksen jälkeen
 
 Jatkokehitysideoita:
+- Tasojen päälle voi hyppiä ja ne liikkuvat joko x tai y akselin suuntaisesti
 - Ostettava trampoliini, jonka avulla voidaan hypätä korkeammalle.
 - Lisäksi peliä vaikeuttavat haamut. Jos haamuihin osuu kolme kertaa, peli päättyy.
 - Aloitusnäkymä, jossa pelin säännöt ja aloita peli -nappi.

@@ -29,9 +29,75 @@ class PlatformJumpingGame:
         
     def item1(self):
 
-    #testausvaiheessa, siirrettävä omaan tiedostoon
-        pygame.draw.circle(self.screen, "blue", (90,650), 20)
-        pygame.display.flip()
+      #alustava kokeilu pallon hallinnasta ja luonnista:
+
+        x = 90
+        y = 650
+ 
+        
+
+        
+
+        oikealle = False
+        vasemmalle = False
+        ylos = False
+        alas = False
+        clock = pygame.time.Clock()
+        
+        while True:
+            for tapahtuma in pygame.event.get():
+                if tapahtuma.type == pygame.KEYDOWN:
+                    if tapahtuma.key == pygame.K_LEFT:
+                        vasemmalle = True
+                    if tapahtuma.key == pygame.K_RIGHT:
+                        oikealle = True
+                    if tapahtuma.key == pygame.K_UP:
+                        ylos = True
+                    if tapahtuma.key == pygame.K_DOWN:
+                        alas = True
+                # huomaa ero: K_UP ja pygame.KEYUP !!
+        
+                if tapahtuma.type == pygame.KEYUP:
+                    if tapahtuma.key == pygame.K_LEFT:
+                        vasemmalle = False
+                    if tapahtuma.key == pygame.K_RIGHT:
+                        oikealle = False
+                    if tapahtuma.key == pygame.K_UP:
+                        ylos = False
+                    if tapahtuma.key == pygame.K_DOWN:
+                        alas = False
+        
+                if tapahtuma.type == pygame.QUIT:
+                    exit()
+ 
+            if oikealle:
+                x += 2
+            if vasemmalle:
+                x -= 2
+            if ylos:
+                y -= 2
+            if alas:
+                y += 2
+
+            player = pygame.draw.circle(self.screen, "blue", (x, y), 20)
+
+
+            #self.screen.blit(player, (x,y)) wut
+
+            pygame.display.update()
+
+
+            
+            pygame.display.flip()
+            clock.tick(60)
+           
+
+
+
+
+
+  
+  
 
 
 if __name__== "__main__":

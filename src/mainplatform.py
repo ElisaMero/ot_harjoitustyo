@@ -1,97 +1,70 @@
 #muista git push yms..!
-#import unittest?!
-#import os??
+#import unittest ??!
 
 import pygame
-#from controls import Movements
+import os
+
+dirname = os.path.dirname(__file__)
 
 class PlatformJumpingGame:
     def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode((840,780))
-        self.screen.fill((173, 255, 255))
-        self.x = 50
-        self.y = 750
-        self.player = pygame.draw.circle(self.screen, "blue", (self.x, self.y), 20)
+        self.loop()
 
+    def loop(self):
+        while True:
+            self.background()
+            self.graphics()
+            self.events()
+        
+    def background(self):
+        pygame.display.set_caption("Jumping Game")
+        self.screen.fill((173, 255, 255))
         pygame.draw.circle(self.screen, (255,255,255), (100, 100), 20)
         pygame.draw.circle(self.screen, (255,255,255), (150, 100), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 85), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 100), 20)
 
-        self.loop()
-
-    def loop(self):
-        self.screenview()
-        self.item1()
-        
-    def background(self):
-        pass
-        
     
-    def screenview(self):
-        pygame.display.set_caption("Jumping Game")
+    def graphics(self):
+        
+        #tähän importtaa playerimage.py!
+
         pygame.display.flip()
-        self.item1()
-        while True:
-            for happening in pygame.event.get():
-                if happening.type == pygame.QUIT:
-                    exit()
-        
-    def drawing(self, coordinates):
-            pygame.display.update()
-            self.player = pygame.draw.circle(self.screen, "blue", (coordinates), 20)
 
-            #self.screen.blit(player, (x,y)) wut
+    def events(self):
+        player = pygame.image.load(
+            os.path.join(dirname, "images", "box.png")
+        )
+        x = 55-player.get_width()
+        y = 700-player.get_height()
 
-            pygame.display.update()
-            self.item1()
-
-    
-    def item1(self):
-        #Movements.draw() misk eitoimi importtaaminen, selvitä!
-        #alustava kokeilu pallon hallinnasta ja luonnista:
-
-
-        clock = pygame.time.Clock()
-        pygame.display.update()
-
-        coordinates = (self.x, self.y)
-
-        left = False
         right = False
+        left = False
         up = False
         down = False
 
-
+        clock = pygame.time.Clock()
 
         while True:
             for happens in pygame.event.get():
                 if happens.type == pygame.KEYDOWN:
+                    #ei saavuta
                     key = happens.key
                     if key == pygame.K_LEFT:
                         left = True
-                        self.x -= 10
-                        self.drawing(coordinates)
-                    if key == pygame.K_RIGHT:
+                    if happens.key == pygame.K_RIGHT:
+                        exit()
                         right = True
-                        self.x += 10
-                        self.drawing(coordinates)
-
 
                 # onko välttämättömiä hyppäämisen kannalta?:
                     if key == pygame.K_UP:
                         up = True
-                        self.y -= 10
-                        self.drawing(coordinates)
                     if key == pygame.K_DOWN:
                         down = True
-                        self.y += 10
-                        self.drawing(coordinates)
-        
-                if happens.type == pygame.QUIT:
-                    exit()
-                
+              
+                #self.variables = (x,y)
 
                 if happens.type == pygame.KEYUP:
                     key = happens.key
@@ -108,11 +81,27 @@ class PlatformJumpingGame:
                 if happens.type == pygame.QUIT:
                     exit()
                 
+
+            if right:
+                x += 15
+            if left:
+                x -= 15
+            if up:
+                y += 15
+            if down:
+                y -= 15
+            
+            self.graphics()
+            self.screen.blit(player, (x,y))
+            pygame.display.flip()
  
 
-            pygame.display.update()
-            pygame.display.flip()
             clock.tick(60)
+
+            while True:
+                for tapahtuma in pygame.event.get():
+                    if tapahtuma.type == pygame.QUIT:
+                        exit()
   
 
 

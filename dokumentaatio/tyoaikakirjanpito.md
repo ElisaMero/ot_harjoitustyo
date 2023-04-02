@@ -7,3 +7,7 @@
 31.3.2023
 - pelikoodin aloitus, nayton avautuminen ja elementin luonti
 - aikaa: n.3h
+
+1.4.2023
+- pelaajan ohjaaman hahmon luonti ja liikkumisen testaus
+- aikaa n.4h

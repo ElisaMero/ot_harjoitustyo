@@ -6,12 +6,12 @@
 
 [Tyoaikakirjanpito](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[Changelog]()
+[Changelog](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/changelog.md)
+
 
 
 
 Toistaiseksi viikon 3 palautettavat:
-**Viikko3**
 
 [Kaaviot](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/laskarit/viikko3/kaaviot.md)
 

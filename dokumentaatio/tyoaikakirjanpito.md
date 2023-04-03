@@ -11,3 +11,11 @@
 1.4.2023
 - pelaajan ohjaaman hahmon luonti ja liikkumisen testaus
 - aikaa n.4h
+
+2.4.2023
+- pelaajan hahmo muokattu grafiikkaa muutettu
+- aikaa n.4h
+
+3.4.2023
+- x ja y koordinaattien muuttaminen ja sprite korjattu
+- aikaa n.4h

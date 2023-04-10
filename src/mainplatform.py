@@ -11,12 +11,9 @@ class PlatformJumpingGame:
     def __init__(self):
         pygame.init()
 
-        self.player = Player()
-
-        self.all_sprites = pygame.sprite.Group()
-        self.all_sprites.add(self.player)
-
         self.screen = pygame.display.set_mode((840,780))
+
+        self.player = Player()
 
         self.loop()
 
@@ -25,7 +22,6 @@ class PlatformJumpingGame:
         while True:
             self.background()
             self.moving()
-            self.all_sprites.draw(self.screen)
             
             
         
@@ -36,7 +32,13 @@ class PlatformJumpingGame:
         pygame.draw.circle(self.screen, (255,255,255), (150, 100), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 85), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 100), 20)
-        
+        self.draw_player()
+
+
+    def draw_player(self):
+        self.player.all_sprites.draw(self.screen)
+        self.screen.blit(self.player.user, (self.player.rect.x, self.player.rect.y))
+        pygame.display.update() 
   
 
     def moving(self):
@@ -51,22 +53,24 @@ class PlatformJumpingGame:
                     key = happens.key
                     if key == pygame.K_LEFT:
                         self.player.events("left")
+                        self.draw_player()
                     if happens.key == pygame.K_RIGHT:
-                    
                         self.player.events("right")
+                        self.draw_player()
                     if key == pygame.K_UP:
-                        
                         self.player.events("up")
+                        self.draw_player()
                     if key == pygame.K_DOWN:
                         self.player.events("down")
+                        self.draw_player()
 
                 
 
                 if happens.type == pygame.KEYUP:
                     key = happens.key
                     self.player.events("stop")
-
-                        
+     
+            pygame.display.update()    
             pygame.display.flip()
             clock.tick(60)
 
@@ -74,8 +78,6 @@ class PlatformJumpingGame:
 
 if __name__== "__main__":
     PlatformJumpingGame()
-
-
 
 
 

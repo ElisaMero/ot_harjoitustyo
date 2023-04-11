@@ -1,5 +1,3 @@
-#muista git push yms..!
-#import unittest ??!
 
 import os
 import pygame
@@ -15,6 +13,8 @@ class PlatformJumpingGame:
 
         self.player = Player()
 
+        self.jumping = False
+
         self.loop()
 
 
@@ -26,6 +26,7 @@ class PlatformJumpingGame:
             
         
     def background(self):
+        pygame.display.update() 
         pygame.display.set_caption("Jumping Game")
         self.screen.fill((173, 255, 255))
         pygame.draw.circle(self.screen, (255,255,255), (100, 100), 20)
@@ -36,42 +37,42 @@ class PlatformJumpingGame:
 
 
     def draw_player(self):
-        self.player.all_sprites.draw(self.screen)
+        
         self.screen.blit(self.player.user, (self.player.rect.x, self.player.rect.y))
+        self.player.all_sprites.draw(self.screen)
         pygame.display.update() 
   
 
     def moving(self):
+
         clock = pygame.time.Clock()
 
-       
         while True:
+            pygame.display.update() 
+            self.background()
             for happens in pygame.event.get():
                 if happens.type == pygame.QUIT:
                     exit()
-                if happens.type == pygame.KEYDOWN:
-                    key = happens.key
-                    if key == pygame.K_LEFT:
-                        self.player.events("left")
-                        self.draw_player()
-                    if happens.key == pygame.K_RIGHT:
-                        self.player.events("right")
-                        self.draw_player()
-                    if key == pygame.K_UP:
-                        self.player.events("up")
-                        self.draw_player()
-                    if key == pygame.K_DOWN:
-                        self.player.events("down")
-                        self.draw_player()
 
-                
+            usercontrol = pygame.key.get_pressed()
 
-                if happens.type == pygame.KEYUP:
-                    key = happens.key
-                    self.player.events("stop")
+            if usercontrol[pygame.K_RIGHT]:
+                self.player.events("right")
+                self.draw_player()
+            if usercontrol[pygame.K_LEFT]:
+                self.player.events("left")
+                self.draw_player()
+
+            if self.jumping is False and usercontrol[pygame.K_SPACE]:
+                self.jumping = True
+            if self.jumping:
+                self.player.events("jump")
+                if self.player.jump_velocity == 20:
+                    self.jumping = False
      
-            pygame.display.update()    
+            pygame.display.update()  
             pygame.display.flip()
+            pygame.time.delay(20)
             clock.tick(60)
 
 

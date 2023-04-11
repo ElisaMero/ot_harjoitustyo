@@ -8,3 +8,4 @@ Viikko3:
 
 Viikko4:
 - x- ja y-koordinaatit toimivat ladatun kuvan liikuttamisessa
+- ladattu kuva hyppii ja liikkuu halutulla tavalla (yksi keskeisin asia koko pelin toteutuksessa)

@@ -24,6 +24,11 @@
 - objekti saatu liikkumaan
 - aikaa n.3,5h
 
+11.4.2023
+- objekti liikkuu ja hyppii
+- objekti ei enää monistu
+- aikaa n.2,3h
+
 
 Tämänhetkinen käytetty aika:
-n.19,5h
+n.22h

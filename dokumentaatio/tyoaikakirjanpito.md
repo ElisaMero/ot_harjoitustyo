@@ -29,6 +29,9 @@
 - objekti ei enää monistu
 - aikaa n.2,3h
 
+14.4.2023
+- aloitusnäytön suunnittelua ja toteutuksen hahmottelua
+- aikaa n.1h
 
 Tämänhetkinen käytetty aika:
-n.22h
+n.23h

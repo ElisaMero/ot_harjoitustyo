@@ -13,7 +13,7 @@ class PlatformJumpingGame:
 
         self.player = Player()
 
-        self.jumping = False
+        self.jumping = False 
 
         self.loop()
 
@@ -33,6 +33,11 @@ class PlatformJumpingGame:
         pygame.draw.circle(self.screen, (255,255,255), (150, 100), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 85), 20)
         pygame.draw.circle(self.screen, (255,255,255), (125, 100), 20)
+
+        pygame.draw.circle(self.screen, (255,255,255), (350, 150), 20)
+        pygame.draw.circle(self.screen, (255,255,255), (400, 150), 20)
+        pygame.draw.circle(self.screen, (255,255,255), (375, 135), 20)
+        pygame.draw.circle(self.screen, (255,255,255), (375, 150), 20)
         self.draw_player()
 
 

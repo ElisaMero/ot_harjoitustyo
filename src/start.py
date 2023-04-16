@@ -8,7 +8,7 @@ class StartScreen:
         # startin jälkee breikkaa täält
         #ja kutsuu looppia mainplatformis
         #muista sen importtaus, et pystyy lukee toisiaan!
-        self.graphics()
+        self.graphics2()
 
 
     def graphics2(self):

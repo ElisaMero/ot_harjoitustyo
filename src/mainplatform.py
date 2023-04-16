@@ -1,9 +1,7 @@
 
-import os
 import pygame
 from objects.playerimage import Player
 
-dirname = os.path.dirname(__file__)
 
 class PlatformJumpingGame:
     def __init__(self):
@@ -38,8 +36,15 @@ class PlatformJumpingGame:
         pygame.draw.circle(self.screen, (255,255,255), (400, 150), 20)
         pygame.draw.circle(self.screen, (255,255,255), (375, 135), 20)
         pygame.draw.circle(self.screen, (255,255,255), (375, 150), 20)
-        self.draw_player()
+        self.draw_surfaces()
 
+
+    def draw_surfaces(self):
+        #collisions = pygame.sprite.spritecollide(self.player, self.surfaces, False)
+        self.surface = pygame.draw.rect(self.screen, (246,202,161), (590,650, 130, 20))
+        #addaa se all_sprites paikkaan
+        self.draw_player()
+        
 
     def draw_player(self):
         

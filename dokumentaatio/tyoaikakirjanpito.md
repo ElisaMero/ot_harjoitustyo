@@ -33,5 +33,9 @@
 - aloitusnäytön suunnittelua ja toteutuksen hahmottelua
 - aikaa n.1h
 
+16.4.2023
+- pelialueen suunnittelua
+- aikaa n.2h
+
 Tämänhetkinen käytetty aika:
-n.23h
+n.25h

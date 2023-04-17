@@ -37,5 +37,9 @@
 - pelialueen suunnittelua
 - aikaa n.2h
 
+17.4.2023
+- koodin korjausta ja tasohypyn toimivuus
+- aikaa n.4h
+
 Tämänhetkinen käytetty aika:
-n.25h
+n.29h

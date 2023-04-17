@@ -3,23 +3,25 @@ import pygame
 from objects.playerimage import Player
 
 
-class PlatformJumpingGame:
+class PlatformJumpingGame(pygame.sprite.Sprite):
     def __init__(self):
-        pygame.init()
+        super().__init__()
 
         self.screen = pygame.display.set_mode((840,780))
 
         self.player = Player()
-
+ 
         self.jumping = False 
 
-        self.loop()
+        self.x = 590
+        self.y = 650
 
 
     def loop(self):
         while True:
             self.background()
             self.moving()
+            self.collision()
             
             
         
@@ -38,16 +40,23 @@ class PlatformJumpingGame:
         pygame.draw.circle(self.screen, (255,255,255), (375, 150), 20)
         self.draw_surfaces()
 
-
     def draw_surfaces(self):
-        #collisions = pygame.sprite.spritecollide(self.player, self.surfaces, False)
-        self.surface = pygame.draw.rect(self.screen, (246,202,161), (590,650, 130, 20))
-        #addaa se all_sprites paikkaan
+        self.surface = pygame.draw.rect(self.screen, (246,202,161), (self.x, self.y, 130, 20))  
         self.draw_player()
-        
+
+
+    def collision(self):
+        player_bottom = ((self.player.rect.x +10), (self.player.rect.y+20))
+        #print(self.player.rect.x+10, self.x)
+        if self.x + 130 >= player_bottom[0] >= self.x:
+            self.player.jump_velocity = 0
+            self.jumping = False
+        pygame.display.update() 
+ 
+
+
 
     def draw_player(self):
-        
         self.screen.blit(self.player.user, (self.player.rect.x, self.player.rect.y))
         self.player.all_sprites.draw(self.screen)
         pygame.display.update() 
@@ -72,13 +81,18 @@ class PlatformJumpingGame:
             if usercontrol[pygame.K_LEFT]:
                 self.player.events("left")
                 self.draw_player()
+            
 
             if self.jumping is False and usercontrol[pygame.K_SPACE]:
                 self.jumping = True
             if self.jumping:
                 self.player.events("jump")
+                self.collision()
                 if self.player.jump_velocity == 20:
+                    self.draw_surfaces()
                     self.jumping = False
+              
+                    
      
             pygame.display.update()  
             pygame.display.flip()
@@ -87,8 +101,7 @@ class PlatformJumpingGame:
 
 
 
-if __name__== "__main__":
-    PlatformJumpingGame()
+
 
 
 

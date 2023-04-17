@@ -19,6 +19,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = 690
         self.all_sprites = pygame.sprite.Group()
         self.jump_velocity = 20
+        self.acceleration = 2
 
     def sprite(self):
         self.all_sprites.add(self.user)
@@ -31,11 +32,16 @@ class Player(pygame.sprite.Sprite):
         if direction == "left" and self.rect.x > 0:
             self.rect.x -= 8
 
-        if direction == "jump":
+        if direction == "jump" and self.rect.y < 800:
             self.rect.y -= self.jump_velocity
-            self.jump_velocity -= 2
+            self.jump_velocity -= self.acceleration
             if self.jump_velocity < -20:
                 self.jump_velocity = 20
+
+    
+
+
+
 
         
 

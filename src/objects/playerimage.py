@@ -1,9 +1,10 @@
 
-import pygame
 import os
+import pygame
 
 
 dirname = os.path.dirname(__file__)
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -24,7 +25,6 @@ class Player(pygame.sprite.Sprite):
     def sprite(self):
         self.all_sprites.add(self.user)
 
-
     def events(self, direction):
 
         if direction == "right" and self.rect.x < 800:
@@ -37,27 +37,3 @@ class Player(pygame.sprite.Sprite):
             self.jump_velocity -= self.acceleration
             if self.jump_velocity < -20:
                 self.jump_velocity = 20
-
-    
-
-
-
-
-        
-
- 
-
-
-
-
-            
-
-
-
-                
-
-                
-
-
-
-

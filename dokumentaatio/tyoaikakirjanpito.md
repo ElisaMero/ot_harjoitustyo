@@ -39,7 +39,7 @@
 
 17.4.2023
 - koodin korjausta ja tasohypyn toimivuus
-- aikaa n.4h
+- aikaa n.7h
 
 Tämänhetkinen käytetty aika:
-n.29h
+n.32h

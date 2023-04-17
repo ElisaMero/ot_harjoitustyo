@@ -9,9 +9,9 @@ Pelin idea: Tarkoituksena hyppiä tasoilla ja kerätä kolikoita.
 Käyttäjiä on yksi, joka toimii pelaajan roolissa.
 
 Perus toiminnallisuus:
-- pelaaja ohjaa pelihahmoa näppäimistöltä, joka liikkuu sivu- ja pystysuunnassa 
--- liikkuminen tapahtyy x- ja y-koordinaattien avulla pelaajaluokan yhteydessä
-- pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja)
+- pelaaja ohjaa pelihahmoa näppäimistöltä, joka liikkuu sivu- ja pystysuunnassa (tehty)
+-- liikkuminen tapahtyy x- ja y-koordinaattien avulla pelaajaluokan yhteydessä (tehty)
+- pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja) (tehty ensimmäinen)
 - kolikoita, joita voi kerätä
 -- kun kerää kolikon, kolikkolaskuri kasvaa ja kolikon paikka vaihtuu
 -- Kerralla näkyvissä yksi kolikko, jonka paikka vaihtuu aina keräyksen jälkeen

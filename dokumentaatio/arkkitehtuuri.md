@@ -1,5 +1,8 @@
-'''mermaid
-class diagram
-  StartScreen "*" --> GameLoop
-  PlatformJumpingGame"*" --> GameLoop
-  PlatformJumpingGame"*" --> Player
+```mermaid
+
+classDiagram
+  GameLoop <|-- StartScreen
+  GameLoop <|-- PlatformJumpingGame
+  PlatformJumpingGame <|-- Player
+
+```

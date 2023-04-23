@@ -42,6 +42,7 @@
 - aikaa n.7h
 
 19.4.2023
+- aloitusnäyttö
 - aikaa n.2h
 
 22.4.2023
@@ -49,5 +50,9 @@
  - pelilaudan viimeistelyä
  - aikaa n.6h
 
+23.4.2023
+- karkkien keräys sekä lopetusnäyttö
+- aikaa n.4h
+
 Tämänhetkinen käytetty aika:
-n.40h
+n.44h

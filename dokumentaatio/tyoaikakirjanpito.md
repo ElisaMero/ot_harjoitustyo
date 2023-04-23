@@ -41,5 +41,13 @@
 - koodin korjausta ja tasohypyn toimivuus
 - aikaa n.7h
 
+19.4.2023
+- aikaa n.2h
+
+22.4.2023
+ - liikkumisen logiikka vaihdettu pygamen spriten mukaiseksi
+ - pelilaudan viimeistelyä
+ - aikaa n.6h
+
 Tämänhetkinen käytetty aika:
-n.32h
+n.40h

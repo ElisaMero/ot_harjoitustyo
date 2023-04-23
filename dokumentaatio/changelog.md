@@ -11,3 +11,6 @@ Viikko4:
 - ladattu kuva hyppii ja liikkuu halutulla tavalla (yksi keskeisin asia koko pelin toteutuksessa)
 - pelaaja reagoi tason kanssa pysymällä sen päällä
 - start-pelinäkymä luotu ennen pelialuetta
+
+Viikko5:
+- liikkumisen logiikkaa muutettu spriten mukaiseksi ja vektoritoteutus

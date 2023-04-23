@@ -3,7 +3,8 @@ import sys
 import pygame
 from objects.playerimage import Player
 from objects.shelves import Shelves
-
+from objects.candies import Candies
+from random import randint
 
 
 class PlatformJumpingGame():
@@ -12,17 +13,17 @@ class PlatformJumpingGame():
         self.screen = pygame.display.set_mode((840, 780))
 
         self.player = Player(self)
-
         self.jumping = False
+        self.calculator = 0
 
         self.clock = pygame.time.Clock()
 
     def loop(self):
         while True:
-            # self.clock.tick(60)
             self.background()
             self.draw_all()
             self.collisions()
+            self.candy_collision()
             self.player.gravity()
             self.moving()
             self.clock.tick(60)
@@ -31,7 +32,7 @@ class PlatformJumpingGame():
         pygame.display.update()
         pygame.display.set_caption("Jumping Game")
         self.screen.fill((173, 255, 255))
-        #clouds:
+        # clouds:
         pygame.draw.circle(self.screen, (255, 255, 255), (100, 100), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (150, 100), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (125, 85), 20)
@@ -41,16 +42,18 @@ class PlatformJumpingGame():
         pygame.draw.circle(self.screen, (255, 255, 255), (400, 150), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (375, 135), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (375, 150), 20)
-        #sign:
-        pygame.draw.rect(self.screen, (149,113,85), (375, 710, 73, 33))
-        pygame.draw.rect(self.screen, (149,113,85), (400, 715, 10, 60))
+        # sign:
+        pygame.draw.rect(self.screen, (149, 113, 85), (375, 710, 73, 33))
+        pygame.draw.rect(self.screen, (149, 113, 85), (400, 715, 10, 60))
         font = pygame.font.SysFont("Arial", 20)
-        text1 = font.render("Danger!", True, (255, 255, 255))    
+        text1 = font.render("Danger!", True, (255, 255, 255))
         self.screen.blit(text1, (376, 715))
-        
+
         self.player.gravity()
         self.collisions()
+        self.candy_collision()
         self.draw_all()
+        self.score()
 
     def sprite_add_player(self):
         self.all_sprites = pygame.sprite.Group()
@@ -62,9 +65,9 @@ class PlatformJumpingGame():
 
         shelf1 = Shelves(560, 640, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
-        shelf3 = Shelves(0, 760, 250, 20)    # floor1
+        shelf3 = Shelves(0, 760, 290, 20)    # floor1
         shelf4 = Shelves(530, 370, 130, 20)
-        shelf5 = Shelves(390, 760, 480, 20) # floor2
+        shelf5 = Shelves(390, 760, 480, 20)  # floor2
         shelf6 = Shelves(100, 490, 130, 20)
         shelf7 = Shelves(400, 270, 130, 20)
 
@@ -85,11 +88,19 @@ class PlatformJumpingGame():
         self.shelves.add(shelf7)
 
         pygame.display.update()
+        self.draw_candy()
+
+    def draw_candy(self):
+        self.candysprite = pygame.sprite.Group()
+        test = Candies(randint(15, 600), randint(15, 630), 15, 20)
+        self.all_sprites.add(test)
+        self.candysprite.add(test)
         self.loop()
 
     def draw_all(self):
         self.player.gravity()
         self.shelves.draw(self.screen)
+        self.candysprite.draw(self.screen)
         self.screen.blit(self.player.user, (self.player.rect.center))
         self.all_sprites.update()
         pygame.display.flip()
@@ -100,6 +111,27 @@ class PlatformJumpingGame():
         if collision:
             self.player.position.y = collision[0].rect.top
             self.player.velocity.y = 0
+
+    def candy_collision(self):
+        collision2 = pygame.sprite.spritecollide(
+            self.player, self.candysprite, False)
+        if collision2:
+            self.player.position.y = collision2[0].rect.top
+            self.counter()
+        else:
+            pass
+
+    def counter(self):
+        self.calculator += 1
+        self.score()
+        self.draw_candy()
+
+    def score(self):
+        font = pygame.font.SysFont("Arial", 40)
+        text = font.render(f"Score: {self.calculator}", True, (255, 255, 255))
+        self.screen.blit(text, (630, 80))
+        pygame.display.flip()
+        pygame.display.update()
 
     def moving(self):
         self.player.gravity()

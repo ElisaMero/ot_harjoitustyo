@@ -1,6 +1,7 @@
 
 import os
 import pygame
+from stop import StopScreen
 vector = pygame.math.Vector2
 
 dirname = os.path.dirname(__file__)
@@ -11,6 +12,7 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
 
         self.mp = mp
+        self.stop = StopScreen()
 
         self.user = pygame.image.load(
             os.path.join(dirname, "..", "images", "box.png")
@@ -21,14 +23,13 @@ class Player(pygame.sprite.Sprite):
         self.rect.center = (40, 690)
         self.position = vector(40, 690)
         self.velocity = vector(0, 0)
-        self.acceleration = vector(0, 0.7)
+        self.acceleration = vector(0, 0.0)
 
     def gravity(self):
-        self.acceleration = vector(0, 0.5)
+        self.acceleration = vector(0, 0.51)
         pygame.display.update()
 
     def events(self, direction):
-        self.acceleration = vector(0, 0.5)
         if direction == "right":
             self.acceleration.x += 0.2
         if direction == "left":
@@ -42,9 +43,9 @@ class Player(pygame.sprite.Sprite):
             if collision:
                 self.velocity.y = -15
                 collision = False
-                
+
         # physics equations for moving:
-        self.acceleration.x += self.velocity.x * -0.01
+        self.acceleration.x += self.velocity.x * -0.007
         self.velocity += self.acceleration
         self.position += self.velocity + 0.5 * self.acceleration
 
@@ -54,3 +55,6 @@ class Player(pygame.sprite.Sprite):
             self.position.x = 840
 
         self.rect.midbottom = self.position
+
+        if self.position.y > 800:
+            self.stop.last_loop()

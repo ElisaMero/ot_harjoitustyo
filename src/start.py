@@ -40,8 +40,6 @@ class StartScreen:
         clock = pygame.time.Clock()
 
         while True:
-            pygame.display.update()
-
             for happens in pygame.event.get():
                 if happens.type == pygame.QUIT:
                     sys.exit()

@@ -14,3 +14,4 @@ Viikko4:
 
 Viikko5:
 - liikkumisen logiikkaa muutettu spriten mukaiseksi ja vektoritoteutus
+- karkkien keräys, lopetusnäyttö ja laskuri

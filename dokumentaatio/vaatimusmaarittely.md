@@ -26,4 +26,7 @@ Ohjelmiston vaatuimuksia:
 Huom! Ohjeet otettu Ohjelmistotekniikka viikko 1:n ohjeistuksesta.
 - ohjelmiston tulee toimia Linux- sekä OSX-käyttöjärjestelmillä varustetuissa koneissa.
 
+Pelin rakenteen muutoksia alustavasta määrittelystä:
+- kolikoiden sijan karkkien keräys
+
 

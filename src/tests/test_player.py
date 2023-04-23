@@ -29,5 +29,3 @@ class TestPlayer(unittest.TestCase):
         main = PlatformJumpingGame()
         main.collision()
         self.assertEqual(main.player.jump_velocity, 20)
-    
-    

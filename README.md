@@ -18,7 +18,10 @@
 ##
 
 Ohjelman suoritus: poetry run invoke start
+
 Ohjelman testaus: poetry run invoke test
+
 Testikattavuus: poetry run invoke coverage-report
+
 Pylint: poetry run invoke lint
 

@@ -12,15 +12,18 @@ Perus toiminnallisuus:
 - pelaaja ohjaa pelihahmoa näppäimistöltä, joka liikkuu sivu- ja pystysuunnassa (tehty)
 -- liikkuminen tapahtyy x- ja y-koordinaattien avulla pelaajaluokan yhteydessä (tehty)
 - pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja) (tehty ensimmäinen)
-- kolikoita, joita voi kerätä
--- kun kerää kolikon, kolikkolaskuri kasvaa ja kolikon paikka vaihtuu
--- Kerralla näkyvissä yksi kolikko, jonka paikka vaihtuu aina keräyksen jälkeen
+-Kolikot vaihdettu karkeiksi! (tehty)
+- kolikoita, joita voi kerätä (tehty)
+-- kun kerää kolikon, kolikkolaskuri kasvaa ja kolikon paikka vaihtuu (tehty)
+-- Kerralla näkyvissä yksi kolikko, jonka paikka vaihtuu aina keräyksen jälkeen (tehty)
 
 Jatkokehitysideoita:
 - Tasojen päälle voi hyppiä ja ne liikkuvat joko x tai y akselin suuntaisesti
 - Ostettava trampoliini, jonka avulla voidaan hypätä korkeammalle.
 - Lisäksi peliä vaikeuttavat haamut. Jos haamuihin osuu kolme kertaa, peli päättyy.
-- Aloitusnäkymä, jossa pelin säännöt ja aloita peli -nappi.
+- Aloitusnäkymä, jossa pelin säännöt ja aloita peli -nappi. (tehty)
+- Myös lopetusnäyttö (tehty)
+- lattiassa reikä, josta voi pudota ja peli päättyy (tehty)
 
 Ohjelmiston vaatuimuksia:
 Huom! Ohjeet otettu Ohjelmistotekniikka viikko 1:n ohjeistuksesta.

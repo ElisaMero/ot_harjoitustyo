@@ -15,4 +15,10 @@
 [Changelog](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
 
+##
+
+Ohjelman suoritus: poetry run invoke start
+Ohjelman testaus: poetry run invoke test
+Testikattavuus: poetry run invoke coverage-report
+Pylint: poetry run invoke lint
 

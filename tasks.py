@@ -5,7 +5,7 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("python3 src/mainplatform.py", pty=True)
+    ctx.run("python3 src/running.py", pty=True)
 
 
 

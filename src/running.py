@@ -14,8 +14,7 @@ class GameLoop:
 
     def gameloop(self):
         self.start.startloop()
-
-        self.main.sprite_add_player()
+        self.main.add_sprites()
 
 
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
 
 import sys
+from random import randint
 import pygame
 from objects.playerimage import Player
 from objects.shelves import Shelves
 from objects.candies import Candies
-from random import randint
 
 
 class PlatformJumpingGame():
@@ -15,6 +15,8 @@ class PlatformJumpingGame():
         self.player = Player(self)
         self.jumping = False
         self.calculator = 0
+        self.all_sprites = pygame.sprite.Group()
+        self.shelves = pygame.sprite.Group()
 
         self.clock = pygame.time.Clock()
 
@@ -24,6 +26,7 @@ class PlatformJumpingGame():
             self.draw_all()
             self.collisions()
             self.candy_collision()
+            self.score()
             self.player.gravity()
             self.moving()
             self.clock.tick(60)
@@ -42,6 +45,9 @@ class PlatformJumpingGame():
         pygame.draw.circle(self.screen, (255, 255, 255), (400, 150), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (375, 135), 20)
         pygame.draw.circle(self.screen, (255, 255, 255), (375, 150), 20)
+        self.more_backround()
+
+    def more_backround(self):
         # sign:
         pygame.draw.rect(self.screen, (149, 113, 85), (375, 710, 73, 33))
         pygame.draw.rect(self.screen, (149, 113, 85), (400, 715, 10, 60))
@@ -55,14 +61,16 @@ class PlatformJumpingGame():
         self.draw_all()
         self.score()
 
-    def sprite_add_player(self):
-        self.all_sprites = pygame.sprite.Group()
-        self.all_sprites.add(self.player)
+    def add_sprites(self):
+        self.sprite_add_player()
         self.draw_surfaces()
+        self.draw_candy()
+        self.loop()
+
+    def sprite_add_player(self):
+        self.all_sprites.add(self.player)
 
     def draw_surfaces(self):
-        self.shelves = pygame.sprite.Group()
-
         shelf1 = Shelves(560, 640, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
         shelf3 = Shelves(0, 760, 290, 20)    # floor1
@@ -70,7 +78,10 @@ class PlatformJumpingGame():
         shelf5 = Shelves(390, 760, 480, 20)  # floor2
         shelf6 = Shelves(100, 490, 130, 20)
         shelf7 = Shelves(400, 270, 130, 20)
+        self.add_in_all_sprites(shelf1, shelf2, shelf3,
+                                shelf4, shelf5, shelf6, shelf7)
 
+    def add_in_all_sprites(self, shelf1, shelf2, shelf3, shelf4, shelf5, shelf6, shelf7):
         self.all_sprites.add(shelf1)
         self.all_sprites.add(shelf2)
         self.all_sprites.add(shelf3)
@@ -78,7 +89,10 @@ class PlatformJumpingGame():
         self.all_sprites.add(shelf5)
         self.all_sprites.add(shelf6)
         self.all_sprites.add(shelf7)
+        self.add_in_shelves(shelf1, shelf2, shelf3,
+                            shelf4, shelf5, shelf6, shelf7)
 
+    def add_in_shelves(self, shelf1, shelf2, shelf3, shelf4, shelf5, shelf6, shelf7):
         self.shelves.add(shelf1)
         self.shelves.add(shelf2)
         self.shelves.add(shelf3)
@@ -86,16 +100,13 @@ class PlatformJumpingGame():
         self.shelves.add(shelf5)
         self.shelves.add(shelf6)
         self.shelves.add(shelf7)
-
         pygame.display.update()
-        self.draw_candy()
 
     def draw_candy(self):
         self.candysprite = pygame.sprite.Group()
         test = Candies(randint(15, 600), randint(15, 630), 15, 20)
         self.all_sprites.add(test)
         self.candysprite.add(test)
-        self.loop()
 
     def draw_all(self):
         self.player.gravity()
@@ -110,7 +121,8 @@ class PlatformJumpingGame():
             self.player, self.shelves, False)
         if collision:
             self.player.position.y = collision[0].rect.top
-            self.player.velocity.y = 0
+            self.player.acceleration.y = 0
+            self.player.position.y = collision[0].rect.top
 
     def candy_collision(self):
         collision2 = pygame.sprite.spritecollide(
@@ -122,9 +134,12 @@ class PlatformJumpingGame():
             pass
 
     def counter(self):
-        self.calculator += 1
+        self.calculator1()
         self.score()
         self.draw_candy()
+
+    def calculator1(self):
+        self.calculator += 1
 
     def score(self):
         font = pygame.font.SysFont("Arial", 40)
@@ -134,16 +149,13 @@ class PlatformJumpingGame():
         pygame.display.update()
 
     def moving(self):
-        self.player.gravity()
         self.draw_all()
-
         while True:
             pygame.display.update()
             self.background()
             for happens in pygame.event.get():
                 if happens.type == pygame.QUIT:
                     sys.exit()
-
             usercontrol = pygame.key.get_pressed()
 
             if usercontrol[pygame.K_RIGHT]:
@@ -152,15 +164,13 @@ class PlatformJumpingGame():
             if usercontrol[pygame.K_LEFT]:
                 self.player.events("left")
                 self.draw_all()
-
             if self.jumping is False and usercontrol[pygame.K_SPACE]:
                 self.jumping = True
             if self.jumping:
                 self.player.events("jump")
-                #self.jumping = False
                 if self.player.velocity == 15:
-                    self.draw_surfaces()
                     self.jumping = False
+                    self.draw_surfaces()
 
             pygame.display.update()
             pygame.display.flip()

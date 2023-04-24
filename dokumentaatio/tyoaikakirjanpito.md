@@ -54,5 +54,9 @@
 - karkkien keräys sekä lopetusnäyttö
 - aikaa n.4h
 
+24.3.2023
+- hienosäätöä
+- aikaa n.6h
+
 Tämänhetkinen käytetty aika:
-n.44h
+n.50h

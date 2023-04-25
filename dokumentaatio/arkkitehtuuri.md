@@ -23,6 +23,6 @@ sequenceDiagram
   PlatformJumpingGame<<-Playeer: return
   PlatformJumpingGame->>Player: events("right")
   Player->>StopScreen: last_loop()
-  
+   
 ```
  

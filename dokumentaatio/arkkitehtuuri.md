@@ -13,14 +13,16 @@ Sekvenssikaavio (erilainen luokkakuvaukseen verrattuna, johtuen uusista muutoksi
 ```mermaid
 sequenceDiagram
   actor User
-  participant UI
-  participant TodoService
-  participant UserRepository
-  User->>UI: click "Login" button
-  UI->>TodoService: login("kalle", "kalle123")
-  TodoService->>UserRepository: find_by_username("kalle")
-  UserRepository-->>TodoService: user
-  TodoService-->>UI: user
-  UI->UI: show_todos_view()
+  participant StartScreen
+  participant PlatformJumpingGame
+  participant Player
+  participant StopScreen
+  User->>StartScreen: StartScreen
+  StartScreen->>PlatformJumpingGame: press "Enter"
+  PlatformJumpingGame->>Player: events("right")
+  PlatformJumpingGame<<-Playeer: return
+  PlatformJumpingGame->>Player: events("right")
+  Player-->>StopScreen: last_loop()
+  
 ```
  

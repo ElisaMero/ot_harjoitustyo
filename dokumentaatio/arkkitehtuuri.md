@@ -20,7 +20,7 @@ sequenceDiagram
   User->>StartScreen: StartScreen
   StartScreen->>PlatformJumpingGame: press "Enter"
   PlatformJumpingGame->>Player: events("right")
-  PlatformJumpingGame<<-Player: return
+  Player-->>PlatformJumpingGame: return
   PlatformJumpingGame->>Player: events("right")
   Player->>StopScreen: last_loop()
    

@@ -8,7 +8,7 @@ classDiagram
 ```
 
 
-Sekvenssikaavio (erilainen luokkakuvaukseen verrattuna, johtuen uusista muutoksista):
+Sekvenssikaavio alotusnäytöstä pelin lattiaraon kautta lopetukseen. (erilainen luokkakuvaukseen verrattuna, johtuen uusista muutoksista):
 
 ```mermaid
 sequenceDiagram
@@ -20,7 +20,7 @@ sequenceDiagram
   User->>StartScreen: StartScreen
   StartScreen->>PlatformJumpingGame: press "Enter"
   PlatformJumpingGame->>Player: events("right")
-  Player-->>PlatformJumpingGame: return
+  Player-->>PlatformJumpingGame: 
   PlatformJumpingGame->>Player: events("right")
   Player->>StopScreen: last_loop()
    

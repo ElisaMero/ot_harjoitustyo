@@ -99,16 +99,18 @@ class TestPlayer(unittest.TestCase):
         player.events("left")
         self.assertEqual(player.position.x, 840)
 
-   # def test_scores(self):
-    #    pass
+    #def test_scores(self):
      #   main = PlatformJumpingGame()
       #  main.score()
        # self.assertEqual()
 
-  #  def test_adds_sprites(self):
-   #     main = PlatformJumpingGame()
-    #    main.sprite_add_player()
-     #   self.assertEqual(main.all_sprites, main.player)
+    def test_adds_sprites(self):
+        main = PlatformJumpingGame()
+        main.sprite_add_player()
+        
+        self.assertTrue(main.player in main.all_sprites)
+
+
 
     def test_candy_koordinates(self):
         candy = Candies(15, 15, 15, 15)
@@ -120,16 +122,4 @@ class TestPlayer(unittest.TestCase):
         Shelves(560, 640, 130, 20)
         self.assertEqual(560, 560)
 
-   # def test_starting(self):
-    #    run = GameLoop()
-     #   run.gameloop()
-      #  self.test_error()
-       # self.assertEqual(True)
 
-   # def test_error(self):
-    #    with self.assertRaises(SystemExit) as cm:
-     #       self.my_method()
-      #      self.assertEqual(cm.exception.code, 0)
-
-   # def my_method(self):
-    #    sys.exit()

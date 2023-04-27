@@ -8,9 +8,9 @@ classDiagram
   PlatformJumpingGame <|-- Player
   PlatformJumpingGame <|-- Candies
   PlatformJumpingGame <|-- Shelves
-  Player <|-- StopScreen
+  PlatformJumpingGame <|-- StopScreen
   SaveData <|-- Board
-  StartScreen <|-- Board  
+  PlatformJumpingGame <|-- SaveData  
 ```
 
 

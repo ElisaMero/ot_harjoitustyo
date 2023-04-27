@@ -26,8 +26,7 @@ class PlatformJumpingGame():
         """    Args: 
         self.screen = näyttö ja sen korkeus
         self.player = player joka saa itselleen kopion tästä luokasta
-        self.jumping = katsoo, onko pelaaja tasolla vai ilmassa, 
-        alussa epätosi booleanin arvo
+        self.jumping = asettaa pelaajan hyppimisen päälle 
         self.calculator = laskee osumat karkkien kohdalla, alkaa 0:sta
         self.clock = pygamen kello
         """
@@ -35,7 +34,7 @@ class PlatformJumpingGame():
 
         self.player = Player(self)
         self.stop = StopScreen()
-        self.jumping = False
+        self.jumping = True
         self.all_sprites = pygame.sprite.Group()
         self.shelves = pygame.sprite.Group()
         self.calculator = 0
@@ -234,7 +233,7 @@ class PlatformJumpingGame():
             if usercontrol[pygame.K_LEFT]:
                 self.player.events("left")
                 self.draw_all()
-            if self.jumping is False and usercontrol[pygame.K_SPACE]:
+            if self.jumping is True and usercontrol[pygame.K_SPACE]:
                 self.jumping = True
             if self.jumping:
                 self.player.events("jump")

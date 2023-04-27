@@ -10,6 +10,7 @@ class Board:
         self.screen4 = avaa näytön ja asettaa sille koon.
         self.data = yhdistää SaveData-luokan Board-luokkaan.
     """
+
     def __init__(self):
         """
         Args:
@@ -25,6 +26,8 @@ class Board:
         """
         while True:
             self.board_graphics()
+            self.get_scores_on_screen()
+            self.board_events()
             break
 
     def board_graphics(self):
@@ -42,12 +45,10 @@ class Board:
         text = font.render("Highscores", True, (255, 255, 255))
         self.screen4.blit(text, (70, 130))
         font2 = pygame.font.SysFont("Arial", 40)
-        text2 = font2.render("Press ENTER to start game",
+        text2 = font2.render("Press 2 to start game",
                              True, (255, 255, 255))
         self.screen4.blit(text2, (70, 680))
-
         pygame.display.flip()
-        self.get_scores_on_screen()
 
     def get_scores_on_screen(self):
         """Vastaa listan hausta SaveData-luokasta,
@@ -66,7 +67,6 @@ class Board:
             order += 1
             y_koordinate += 70
         pygame.display.flip()
-        self.board_events()
 
     def board_events(self):
         """Vastaa luokan tapahtumista. Raksia painamalla

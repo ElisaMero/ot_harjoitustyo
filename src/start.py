@@ -11,6 +11,7 @@ class StartScreen:
         self.board = yhdistetään tulostaulu luokkaan Board, 
         jotta kyseisen luokan funktiota voidaan kutsua. 
     """
+
     def __init__(self):
         """ Args:
         self.screen2 = pygamen näytön piirtäminen 
@@ -41,7 +42,7 @@ class StartScreen:
         font = pygame.font.SysFont("Arial", 90)
         font2 = pygame.font.SysFont("Arial", 50)
         text = font.render("Start", True, (255, 255, 255))
-        text2 = font2.render("Press ENTER to start", True, (255, 255, 255))
+        text2 = font2.render("Press 2 to start", True, (255, 255, 255))
         self.screen2.blit(text, (310, 380))
         self.screen2.blit(text2, (70, 180))
 
@@ -53,18 +54,19 @@ class StartScreen:
 
     def startgame(self):
         """Vastaa tapahtumista.
-        Jos halutaan sulkea peli rastista, se onnistuu
+        Jos halutaan sulkea peli rastista, se onnistuu.
         Jos näppäimistöltä painetaan 1, 
         kutsutaan Board-luokan funktiota, 
         jolloin käyttäjälle näkyy tulostaulu.
+        Painamalla 2, saa pelin avattua suoraan.
         """
         while True:
             for happens in pygame.event.get():
                 if happens.type == pygame.QUIT:
                     sys.exit()
 
-                if happens.type == pygame.KEYDOWN:
-                    if happens.key == pygame.K_1:
-                        self.board.board_loop()
-                    else:
-                        return
+            usercontrol = pygame.key.get_pressed()
+            if usercontrol[pygame.K_1]:
+                self.board.board_loop()
+            if usercontrol[pygame.K_2]:
+                return

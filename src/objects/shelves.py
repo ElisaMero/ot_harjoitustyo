@@ -12,6 +12,7 @@ class Shelves(pygame.sprite.Sprite):
         self.rect.x = x-koordinaatti
         self.rect.y = y-koordinaatti
     """
+
     def __init__(self, x_koord, y_koord, width, height):
         """    Args:
         self.image = määrittelee koon pinnalle

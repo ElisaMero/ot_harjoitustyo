@@ -11,6 +11,8 @@ from stop import StopScreen
 
 class PlatformJumpingGame():
     """Luokka, joka on vastuussa grafiikoiden ja tapahtumien päivityksestä.
+    Kaikki funktiot, jotka tarvitsevat self.screen-muuttujaa
+    toimiakseen.
     Attribuutit: 
         self.screen = näyttö ja sen korkeus
         self.player = player joka saa itselleen kopion tästä luokasta
@@ -31,28 +33,28 @@ class PlatformJumpingGame():
         self.clock = pygamen kello
         """
         self.screen = pygame.display.set_mode((840, 780))
-
         self.player = Player(self)
         self.stop = StopScreen()
         self.jumping = True
         self.all_sprites = pygame.sprite.Group()
         self.shelves = pygame.sprite.Group()
         self.calculator = 0
-        self.clock = pygame.time.Clock()
 
     def loop(self):
         """Pelin silmukka, joka pyörittää peliä
         """
         while True:
-            self.test()
+            self.backrounds()
             self.draw_all()
             self.player.gravity()
             self.candy_collision()
             self.score()
             self.moving()
-            self.clock.tick(60)
 
-    def test(self):
+    def backrounds(self):
+        """Silmukka, joka kutsuu funktiot, joiden avulla piirretään
+        pelin taustagrafiikat sekä seuraavaa pelisilmukkaa. 
+        """
         self.background()
         self.more_backround()
         self.new_loop()
@@ -85,6 +87,10 @@ class PlatformJumpingGame():
         self.new_loop()
 
     def new_loop(self):
+        """Silmukka, joka kutsuu funktioita, joiden avulla päivitetään
+        pelaajaobjektin koordinaatit sekä tarkastetaan, tapahtuiko
+        pelaajan ja karkin välillä osumaa.
+        """
         self.player.gravity()
         self.candy_collision()
         self.draw_all()
@@ -107,7 +113,7 @@ class PlatformJumpingGame():
     def make_surfaces(self):
         """Piirretään laudat omille paikoilleen Shelves-classin avulla
         """
-        shelf1 = Shelves(560, 640, 130, 20)
+        shelf1 = Shelves(560, 620, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
         shelf3 = Shelves(0, 760, 290, 20)    # floor1
         shelf4 = Shelves(530, 370, 130, 20)
@@ -171,7 +177,6 @@ class PlatformJumpingGame():
         self.all_sprites.update()
         pygame.display.update()
         pygame.display.flip()
-        
 
     def candy_collision(self):
         """Tarkastellaan osumia pelaajan ja karkin välillä.
@@ -206,8 +211,11 @@ class PlatformJumpingGame():
         text = font.render(f"Score: {self.calculator}", True, (255, 255, 255))
         self.screen.blit(text, (630, 80))
         pygame.display.flip()
-    
+
     def end_game(self):
+        """Vastaa pelin tuloksen talteen ottamisesta antamalla se SaveData-luokalle.
+        Tämän jälkeen kutsutaan lopetusnäytön aloitusfunktiota.
+        """
         SaveData(self.calculator)
         self.stop.last_loop()
 
@@ -215,12 +223,13 @@ class PlatformJumpingGame():
         """On vastuussa näppäimistöstä ja pygamen raksipainikkeen toiminnasta.
         Oikean nuolinäppäimen painallus kutsuu Player-luokan events-funktiota, antamalla samalla 
         sille arvon "right". Vasenta luolinäppäintä painaessa samalle funkiolle "left"-arvo.
-        "Space-painikkeella aloitetaan hyppiminen kutsumalla events-funktiota arvolla "jump".
+        "Events-funktiolle syötetään toistuvasti "jump"-käsky, joka pitää pelaajan hyppimässä.
         Kyseisen events-funktion suorituksen jälkeen päivitetään x ja y koordinaattien 
         muutokset näytölle kutsumalla piirtofunktiota.
         Päivitetään muutokset kutsumalla update-funktiota.
         """
         self.draw_all()
+        clock = pygame.time.Clock()
         while True:
             self.background()
             for happens in pygame.event.get():
@@ -233,17 +242,10 @@ class PlatformJumpingGame():
             if usercontrol[pygame.K_LEFT]:
                 self.player.events("left")
                 self.draw_all()
-            if self.jumping is True and usercontrol[pygame.K_SPACE]:
-                self.jumping = True
             if self.jumping:
                 self.player.events("jump")
                 if self.player.velocity.y == 15:
-                    self.jumping = False
                     self.make_surfaces()
-            self.update()
-
-    def update(self):
-        """Päivitetään tehdyt muutokset.
-        """
-        pygame.display.flip()
-        pygame.time.delay(20)
+            clock.tick(60)
+            pygame.display.flip()
+            pygame.time.delay(20)

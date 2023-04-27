@@ -13,6 +13,7 @@ class Candies(pygame.sprite.Sprite):
         parametrien avulla.
         self.rect =  objektin ulottuvuukseien määrittely
     """
+
     def __init__(self, x_koord, y_koord, radius, width):
         """
         Args:

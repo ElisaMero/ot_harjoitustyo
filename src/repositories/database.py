@@ -1,6 +1,7 @@
 
 import sqlite3
 
+
 def get_connection():
     """Vastaa yhteyden luonnista tietokantaan.
     """
@@ -16,6 +17,7 @@ class SaveData:
         self.highscore = varastoi pelin loputtua
         osumien arvon.
     """
+
     def __init__(self, highscore):
         """Kutsutaan myös ensimmäistä funktiota
         Args:

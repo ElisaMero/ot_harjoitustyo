@@ -8,6 +8,7 @@ class StopScreen:
     Attribuutit:
         self.screen3 = piirtää näytön ja asettaa sille koon.
     """
+
     def __init__(self):
         """Args:
         self.screen3 = piirtää näytön ja asettaa sille koon.
@@ -18,6 +19,7 @@ class StopScreen:
         """Vastaa näytön piirtofunktion kutsumisesta.
         """
         self.last_graphics()
+        self.stop_game()
 
     def last_graphics(self):
         """Vastaa lopetusnäytön piirtämisestä.
@@ -35,7 +37,6 @@ class StopScreen:
         text = font.render("Game Over", True, (255, 255, 255))
         self.screen3.blit(text, (190, 380))
         pygame.display.flip()
-        self.stop_game()
 
     def stop_game(self):
         """Vastaa toiminnoista.

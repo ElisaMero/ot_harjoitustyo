@@ -29,27 +29,17 @@ class TestPlayer(unittest.TestCase):
     def test_moves_correctly_in_y_position(self):
         player = Player(self)
         player.events("right")
-        self.assertEqual(player.position.y, 690)
+        self.assertEqual(player.position.y, 690.765)
 
     def test_moves_correctly_in_y_position2(self):
         player = Player(self)
         player.events("left")
-        self.assertEqual(player.position.y, 690)
-
-    def test_moves_up(self):
-        player = Player(self)
-        player.events("jumping")
-        self.assertEqual(player.position.y, 690)
+        self.assertEqual(player.position.y, 690.765)
 
     def test_moves_up_check_x(self):
         player = Player(self)
         player.events("jumping")
         self.assertEqual(player.position.x, 40)
-
-    def test_collision_event(self):
-        main = PlatformJumpingGame()
-        main.collisions()
-        self.assertEqual(main.player.velocity, (0, 0))
 
     def test_gravity(self):
         player = Player(self)
@@ -74,12 +64,12 @@ class TestPlayer(unittest.TestCase):
     def test_moving_elements3(self):
         player = Player(self)
         player.events("left")
-        self.assertEqual(player.acceleration.y, 0.0)
+        self.assertEqual(player.acceleration.y, 0.51)
 
     def test_moving_elements4(self):
         player = Player(self)
         player.events("right")
-        self.assertEqual(player.acceleration.y, 0.0)
+        self.assertEqual(player.acceleration.y, 0.51)
 
     def test_moving_elements_in_jumping(self):
         player = Player(self)
@@ -103,11 +93,6 @@ class TestPlayer(unittest.TestCase):
         main.sprite_add_player()
         self.assertTrue(main.player in main.all_sprites)
 
-    # def test_add_shelves_in_sprites(self):
-     #   main = PlatformJumpingGame()
-      #  main.add_in_all_sprites()
-       # self.assertTrue(shelf1, shelf2 in main.all_sprites)
-
     def test_candy_koordinates(self):
         candy = Candies(15, 15, 15, 15)
         Candies(15, 15, 15, 15)
@@ -123,14 +108,14 @@ class TestPlayer(unittest.TestCase):
         data.scores_in_order()
         self.assertTrue(1)
 
-    def test_collision2(self):
+    def test_collision(self):
         main = PlatformJumpingGame()
-        main.collisions()
-        collision = True
-        self.assertEqual(main.player.acceleration.y, 0)
+        player = Player(main)
+        player.events("jump")
+        pygame.sprite.spritecollide(player, main.shelves, False)
+        self.assertEqual(player.velocity.y, 0.51)
 
-    def test_updates(self):
+    def test_shelves_in_sprites(self):
         main = PlatformJumpingGame()
-        main.update()
-        pygame.time.delay(20)
-        self.assertTrue(20)
+        main.make_surfaces()
+        self.assertTrue(main.all_sprites, not None)

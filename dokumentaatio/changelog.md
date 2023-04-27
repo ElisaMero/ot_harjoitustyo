@@ -16,3 +16,9 @@ Viikko5:
 - liikkumisen logiikkaa muutettu spriten mukaiseksi ja vektoritoteutus
 - karkkien keräys, lopetusnäyttö ja laskuri
 - lattiassa reikä, josta voi pudota ja peli päättyy
+- grafiikoiden parantelua
+
+Viikko6:
+- tietokannan toteutus SQL-kielellä 
+- käyttäjälle luotu tulostaulu, jossa näkee viisi suurinta pelitulosta järjestyksessä 
+- jokaisen pelin jälkeen tulos tallentuu tietokantaan

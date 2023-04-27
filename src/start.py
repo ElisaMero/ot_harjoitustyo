@@ -50,7 +50,6 @@ class StartScreen:
                              True, (255, 255, 255))
         self.screen2.blit(text3, (70, 610))
         pygame.display.flip()
-        pygame.display.update()
 
     def startgame(self):
         """Vastaa tapahtumista.

@@ -5,6 +5,8 @@ import pygame
 from objects.playerimage import Player
 from objects.shelves import Shelves
 from objects.candies import Candies
+from repositories.database import SaveData
+from stop import StopScreen
 
 
 class PlatformJumpingGame():
@@ -27,31 +29,34 @@ class PlatformJumpingGame():
         self.jumping = katsoo, onko pelaaja tasolla vai ilmassa, 
         alussa epätosi booleanin arvo
         self.calculator = laskee osumat karkkien kohdalla, alkaa 0:sta
-        all_sprites ja shelves ovat sprite.Grouppeja, 
-        joiden avulla spritecollide-toiminto on mahdollista
         self.clock = pygamen kello
         """
         self.screen = pygame.display.set_mode((840, 780))
 
         self.player = Player(self)
+        self.stop = StopScreen()
         self.jumping = False
-        self.calculator = 0
         self.all_sprites = pygame.sprite.Group()
         self.shelves = pygame.sprite.Group()
+        self.calculator = 0
         self.clock = pygame.time.Clock()
 
     def loop(self):
         """Pelin silmukka, joka pyörittää peliä
         """
         while True:
-            self.background()
+            self.test()
             self.draw_all()
-            self.collisions()
+            self.player.gravity()
             self.candy_collision()
             self.score()
-            self.player.gravity()
             self.moving()
             self.clock.tick(60)
+
+    def test(self):
+        self.background()
+        self.more_backround()
+        self.new_loop()
 
     def background(self):
         """_Annetaan pelille nimi ja asetetaan näytön väri, ja piirretään pilvikuvioita
@@ -78,28 +83,29 @@ class PlatformJumpingGame():
         font = pygame.font.SysFont("Arial", 20)
         text1 = font.render("Danger!", True, (255, 255, 255))
         self.screen.blit(text1, (376, 715))
+        self.new_loop()
 
+    def new_loop(self):
         self.player.gravity()
-        self.collisions()
         self.candy_collision()
         self.draw_all()
         self.score()
-
-    def add_sprites(self):
-        """Lisätään pelin hyppytasot, pelaaja sekä kerättävä karkki omiin ja yhteisiin 
-        sprite.Grouppeihin mahdollistaakseen spritecolliden toiminnan.
-        """
-        self.sprite_add_player()
-        self.draw_surfaces()
-        self.draw_candy()
-        self.loop()
 
     def sprite_add_player(self):
         """Lisätään pelaaja yhteiseen sprite.Grouppiin
         """
         self.all_sprites.add(self.player)
 
-    def draw_surfaces(self):
+    def add_sprites(self):
+        """Lisätään pelin hyppytasot, pelaaja sekä kerättävä karkki omiin ja yhteisiin 
+        sprite.Grouppeihin mahdollistaakseen spritecolliden toiminnan.
+        """
+        self.sprite_add_player()
+        self.make_surfaces()
+        self.draw_candy()
+        self.loop()
+
+    def make_surfaces(self):
         """Piirretään laudat omille paikoilleen Shelves-classin avulla
         """
         shelf1 = Shelves(560, 640, 130, 20)
@@ -164,20 +170,9 @@ class PlatformJumpingGame():
         self.candysprite.draw(self.screen)
         self.screen.blit(self.player.user, (self.player.rect.center))
         self.all_sprites.update()
+        pygame.display.update()
         pygame.display.flip()
-
-    def collisions(self):
-        """Tarkastellaan osumia pelaajan ja laudan välillä. 
-        Jos tulee osuma, pelaaja ei mene laudan läpi. 
-        Osuman sattuessa spritecollide muutetaan todeksi,
-        ja pelaaja ei mene laudan läpi, vaan tunnistaa osuman objektin kanssa. 
-        """
-        collision = pygame.sprite.spritecollide(
-            self.player, self.shelves, False)
-        if collision:
-            self.player.position.y = collision[0].rect.top
-            self.player.acceleration.y = 0
-            self.player.position.y = collision[0].rect.top
+        
 
     def candy_collision(self):
         """Tarkastellaan osumia pelaajan ja karkin välillä.
@@ -212,7 +207,10 @@ class PlatformJumpingGame():
         text = font.render(f"Score: {self.calculator}", True, (255, 255, 255))
         self.screen.blit(text, (630, 80))
         pygame.display.flip()
-        pygame.display.update()
+    
+    def end_game(self):
+        SaveData(self.calculator)
+        self.stop.last_loop()
 
     def moving(self):
         """On vastuussa näppäimistöstä ja pygamen raksipainikkeen toiminnasta.
@@ -240,14 +238,13 @@ class PlatformJumpingGame():
                 self.jumping = True
             if self.jumping:
                 self.player.events("jump")
-                if self.player.velocity == 15:
+                if self.player.velocity.y == 15:
                     self.jumping = False
-                    self.draw_surfaces()
+                    self.make_surfaces()
             self.update()
 
     def update(self):
         """Päivitetään tehdyt muutokset.
         """
-        pygame.display.update()
         pygame.display.flip()
         pygame.time.delay(20)

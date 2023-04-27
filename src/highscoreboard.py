@@ -47,7 +47,6 @@ class Board:
         self.screen4.blit(text2, (70, 680))
 
         pygame.display.flip()
-        pygame.display.update()
         self.get_scores_on_screen()
 
     def get_scores_on_screen(self):
@@ -67,8 +66,6 @@ class Board:
             order += 1
             y_koordinate += 70
         pygame.display.flip()
-        pygame.display.update()
-
         self.board_events()
 
     def board_events(self):

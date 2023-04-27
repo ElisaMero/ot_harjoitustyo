@@ -35,7 +35,6 @@ class StopScreen:
         text = font.render("Game Over", True, (255, 255, 255))
         self.screen3.blit(text, (190, 380))
         pygame.display.flip()
-        pygame.display.update()
         self.stop_game()
 
     def stop_game(self):
@@ -46,7 +45,6 @@ class StopScreen:
         run = True
         while run:
             pygame.display.update()
-
             for happens in pygame.event.get():
                 if happens.type == pygame.QUIT:
                     run = False

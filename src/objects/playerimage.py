@@ -2,7 +2,6 @@
 import os
 import pygame
 from stop import StopScreen
-from repositories.database import SaveData
 VectorMoving = pygame.math.Vector2
 
 dirname = os.path.dirname(__file__)
@@ -25,10 +24,9 @@ class Player(pygame.sprite.Sprite):
         self.position = VectorMoving(40, 690)
         self.velocity = VectorMoving(0, 0)
         self.acceleration = VectorMoving(0, 0.0)
-
+    
     def gravity(self):
         self.acceleration = VectorMoving(0, 0.51)
-        pygame.display.update()
 
     def events(self, direction):
         if direction == "right":
@@ -48,7 +46,7 @@ class Player(pygame.sprite.Sprite):
 
     def events2(self):
 
-        # physics equations for moving:
+        self.acceleration.y = 0.51
         self.acceleration.x += self.velocity.x * -0.007
         self.velocity += self.acceleration
         self.position += self.velocity + 0.5 * self.acceleration
@@ -61,5 +59,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.midbottom = self.position
 
         if self.position.y > 800:
-            SaveData(self.mainplatform.calculator)
-            self.stop.last_loop()
+            self.mainplatform.end_game()
+
+    
+

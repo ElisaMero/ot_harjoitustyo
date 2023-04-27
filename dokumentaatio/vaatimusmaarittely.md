@@ -1,28 +1,25 @@
 **Tasohyppelypeli** 
 
-Pelin otsikoksi Jumping Game
+Pelin otsikko: Jumping Game
 
 Alustava määrittelydokumentti
 
-Pelin idea: Tarkoituksena hyppiä tasoilla ja kerätä kolikoita.
+Pelin idea: Tarkoituksena hyppiä tasoilla ja kerätä karkkeja.
 
 Käyttäjiä on yksi, joka toimii pelaajan roolissa.
 
 Perus toiminnallisuus:
-- pelaaja ohjaa pelihahmoa näppäimistöltä, joka liikkuu sivu- ja pystysuunnassa (tehty)
--- liikkuminen tapahtyy x- ja y-koordinaattien avulla pelaajaluokan yhteydessä (tehty)
-- pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja) (tehty ensimmäinen)
--Kolikot vaihdettu karkeiksi! (tehty)
-- kolikoita, joita voi kerätä (tehty)
--- kun kerää kolikon, kolikkolaskuri kasvaa ja kolikon paikka vaihtuu (tehty)
--- Kerralla näkyvissä yksi kolikko, jonka paikka vaihtuu aina keräyksen jälkeen (tehty)
+- Käyttäjä ohjaa pelihahmoa näppäimistöltä, joka liikkuu sivu- ja pystysuunnassa (tehty)
+-- Liikkuminen tapahtuu vektoritoteutuksella pelaajaluokan yhteydessä (tehty)
+- Pelissä on muutama taso, jolle voi hypätä (siis ei leveleitä vaan kannattelevia pintoja) (tehty ensimmäinen)
+- Karkkeja, joita voi kerätä (tehty)
+-- Kun kerää kolikon, osumalaskuri kasvaa ja karkin paikka vaihtuu (tehty)
+-- Kerralla näkyvissä yksi karkki, jonka paikka vaihtuu aina keräyksen jälkeen (tehty)
 
 Jatkokehitysideoita:
-- Tasojen päälle voi hyppiä ja ne liikkuvat joko x tai y akselin suuntaisesti
-- Ostettava trampoliini, jonka avulla voidaan hypätä korkeammalle.
-- Lisäksi peliä vaikeuttavat haamut. Jos haamuihin osuu kolme kertaa, peli päättyy.
-- Aloitusnäkymä, jossa pelin säännöt ja aloita peli -nappi. (tehty)
+- Aloitusnäkymä, josta pääsee tulostauluun sekä peliin. (tehty)
 - Myös lopetusnäyttö (tehty)
+- Tulostaulu viidestä suurimmasta tuloksesta. (tehty)
 - lattiassa reikä, josta voi pudota ja peli päättyy (tehty)
 
 Ohjelmiston vaatuimuksia:

@@ -25,7 +25,7 @@ sequenceDiagram
   participant Player
   participant StopScreen
   User->>GameLoop: GameLoop
-  GameLoop->>StartScreen
+  GameLoop->>StartScreen: StartScreen
   StartScreen->>PlatformJumpingGame: press "Enter"
   PlatformJumpingGame->>Player: events("right")
   Player-->>PlatformJumpingGame: 

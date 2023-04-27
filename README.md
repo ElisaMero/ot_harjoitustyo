@@ -16,6 +16,8 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
 [Changelog](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[Käyttöohjeet](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/kauttoohjeet.md)
+
 
 ##
 

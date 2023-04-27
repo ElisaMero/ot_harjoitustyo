@@ -5,6 +5,7 @@ Kuvaus kansioista:
 - objects-kansiossa sijaitsee pelin elementit: pelaaja, hyppytasot sekä karkit
 - repositories-kansiossa sijaitsee tietokannan luominen. Tietokanta on toteutettu SQL-kielellä. Tietokantataulun nimi on Highscores.
 Tauluun tallennetaan jokaisen pelin jälkeen tulos kerätyistä karkeista. Viisi suurinta tulosta näkyy src-kansion highscoreboard-tiedostossa.
+- images-kansiossa on pelaajaobjektin ladattu kuva, joka ladataan playerimage-tiedostoon.
 ##
 
 **Luokkakaavio:**

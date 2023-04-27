@@ -1,10 +1,16 @@
+Luokkakaavio:
+
 ```mermaid
 
 classDiagram
   GameLoop <|-- StartScreen
   GameLoop <|-- PlatformJumpingGame
   PlatformJumpingGame <|-- Player
-
+  PlatformJumpingGame <|-- Candies
+  PlatformJumpingGame <|-- Shelves
+  Player <|-- StopScreen
+  SaveData <|-- Board
+  StartScreen <|-- Board  
 ```
 
 

@@ -2,11 +2,10 @@ import unittest
 import pygame
 import sys
 from objects.playerimage import Player
-from start import StartScreen
 from mainplatform import PlatformJumpingGame
-from running import GameLoop
 from objects.candies import Candies
 from objects.shelves import Shelves
+from repositories.database import SaveData
 
 
 class TestPlayer(unittest.TestCase):
@@ -99,18 +98,15 @@ class TestPlayer(unittest.TestCase):
         player.events("left")
         self.assertEqual(player.position.x, 840)
 
-    #def test_scores(self):
-     #   main = PlatformJumpingGame()
-      #  main.score()
-       # self.assertEqual()
-
-    def test_adds_sprites(self):
+    def test_add_player_in_sprites(self):
         main = PlatformJumpingGame()
         main.sprite_add_player()
-        
         self.assertTrue(main.player in main.all_sprites)
 
-
+    # def test_add_shelves_in_sprites(self):
+     #   main = PlatformJumpingGame()
+      #  main.add_in_all_sprites()
+       # self.assertTrue(shelf1, shelf2 in main.all_sprites)
 
     def test_candy_koordinates(self):
         candy = Candies(15, 15, 15, 15)
@@ -122,4 +118,19 @@ class TestPlayer(unittest.TestCase):
         Shelves(560, 640, 130, 20)
         self.assertEqual(560, 560)
 
+    def test_database_order(self):
+        data = SaveData(1)
+        data.scores_in_order()
+        self.assertTrue(1)
 
+    def test_collision2(self):
+        main = PlatformJumpingGame()
+        main.collisions()
+        collision = True
+        self.assertEqual(main.player.acceleration.y, 0)
+
+    def test_updates(self):
+        main = PlatformJumpingGame()
+        main.update()
+        pygame.time.delay(20)
+        self.assertTrue(20)

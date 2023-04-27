@@ -20,15 +20,18 @@ Sekvenssikaavio alotusnäytöstä pelin lattiaraon kautta lopetukseen. (erilaine
 sequenceDiagram
   actor User
   participant StartScreen
+  participant GameLoop
   participant PlatformJumpingGame
   participant Player
   participant StopScreen
-  User->>StartScreen: StartScreen
+  User->>GameLoop: GameLoop
+  GameLoop->>StartScreen
   StartScreen->>PlatformJumpingGame: press "Enter"
   PlatformJumpingGame->>Player: events("right")
   Player-->>PlatformJumpingGame: 
   PlatformJumpingGame->>Player: events("right")
-  Player->>StopScreen: last_loop()
+  Player-->>PlatformJumpingGame: 
+  PlatformJumpingGame->>StopScreen: last_loop()
    
 ```
  

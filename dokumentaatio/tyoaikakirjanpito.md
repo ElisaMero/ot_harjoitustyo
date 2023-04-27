@@ -58,5 +58,17 @@
 - hienosäätöä
 - aikaa n.6h
 
+25.4.2023
+- tietokannan luonti ja tulostaulu
+- aikaa n.5h
+
+26.4.2023
+- koodin parantelua
+- aikaa n.3h
+
+27.4.2023
+- koodin rakenteen parantelua
+- aikaa n.4h
+
 Tämänhetkinen käytetty aika:
-n.50h
+n.62h

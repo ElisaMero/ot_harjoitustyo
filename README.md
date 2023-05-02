@@ -4,8 +4,10 @@
 
 Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
+##
 
 [Viikko5](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko5)
+[Viikko6](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko6)
 
 
 [Arkkitehtuuri.md](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)

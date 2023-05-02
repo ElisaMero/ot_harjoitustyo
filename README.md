@@ -11,9 +11,9 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 [Viikko6](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko6)
 
 
-[Arkkitehtuuri.md](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Vaatimusmaarittely.md](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmaarittely](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Tyoaikakirjanpito](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 

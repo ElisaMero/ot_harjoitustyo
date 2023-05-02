@@ -23,6 +23,7 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
 
 ##
+Poetryn lataaminen: poetry install
 
 Ohjelman suoritus: poetry run invoke start
 

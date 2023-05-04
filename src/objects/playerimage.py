@@ -105,5 +105,5 @@ class Player(pygame.sprite.Sprite):
 
         self.rect.midbottom = self.position
 
-        if self.position.y > 810:
+        if self.position.y > 830:
             self.mainplatform.end_game()

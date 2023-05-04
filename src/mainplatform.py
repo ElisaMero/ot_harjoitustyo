@@ -115,9 +115,9 @@ class PlatformJumpingGame():
         """
         shelf1 = Shelves(560, 620, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
-        shelf3 = Shelves(0, 760, 290, 20)    # floor1
+        shelf3 = Shelves(0, 760, 295, 20)    # floor1
         shelf4 = Shelves(530, 370, 130, 20)
-        shelf5 = Shelves(390, 760, 480, 20)  # floor2
+        shelf5 = Shelves(390, 760, 485, 20)  # floor2
         shelf6 = Shelves(100, 490, 130, 20)
         shelf7 = Shelves(400, 270, 130, 20)
         self.add_in_all_sprites(shelf1, shelf2, shelf3, shelf4)

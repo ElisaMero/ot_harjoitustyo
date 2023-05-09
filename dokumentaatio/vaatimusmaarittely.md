@@ -1,8 +1,6 @@
-**Tasohyppelypeli** 
+## Tasohyppelypeli 
 
 Pelin otsikko: Jumping Game
-
-Alustava määrittelydokumentti
 
 Pelin idea: Tarkoituksena hyppiä tasoilla ja kerätä karkkeja.
 
@@ -16,7 +14,7 @@ Perus toiminnallisuus:
 -- Kun kerää karkin, osumalaskuri kasvaa (tehty)
 -- Kerralla näkyvissä yksi karkki, jonka paikka vaihtuu aina keräyksen jälkeen (tehty)
 
-Jatkokehitysideoita:
+Toteutetut jatkokehitysideat:
 - Aloitusnäkymä, josta pääsee tulostauluun sekä peliin. (tehty)
 - Myös lopetusnäyttö (tehty)
 - Tulostaulu viidestä suurimmasta tuloksesta. (tehty)

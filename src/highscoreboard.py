@@ -56,12 +56,13 @@ class Board:
         datalistille on annettu arvoksi lista viidestä
         parhaasta tuloksesta, joka piirretään
         näytölle järjestyksessä. 
+        forloopin j-arvo on datalistan arvo, joka lisätään tietokantaan.
         """
         datalist = self.data.scores_in_order()
         order = 1
         y_koordinate = 290
         font3 = pygame.font.SysFont("Arial", 40)
-        for _ in datalist:
+        for j in datalist:
             text3 = font3.render(f"{order}. {j}", True, (255, 255, 255))
             self.screen4.blit(text3, (70, y_koordinate))
             order += 1

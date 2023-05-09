@@ -46,11 +46,6 @@ class TestPlayer(unittest.TestCase):
         player.gravity()
         self.assertEqual(player.acceleration, (0, 0.51))
 
-    def test_counter(self):
-        main = PlatformJumpingGame()
-        main.calculator1()
-        self.assertEqual(main.calculator, 1)
-
     def test_moving_elements(self):
         player = Player(self)
         player.events("left")
@@ -88,20 +83,34 @@ class TestPlayer(unittest.TestCase):
         player.events("left")
         self.assertEqual(player.position.x, 840)
 
+class TestOthers(unittest.TestCase):
+    def setUp(self):
+        pygame.init()
+
     def test_add_player_in_sprites(self):
         main = PlatformJumpingGame()
         main.sprite_add_player()
         self.assertTrue(main.player in main.all_sprites)
 
+    def test_counter(self):
+        main = PlatformJumpingGame()
+        main.calculator1()
+        self.assertEqual(main.calculator, 1)
+
     def test_candy_koordinates(self):
         candy = Candies(15, 15, 15, 15)
         Candies(15, 15, 15, 15)
-        self.assertEqual((15*2), 30)
+        self.assertEqual(candy.rect.x, candy.rect.y, 30)
 
     def test_shelves(self):
         shelf = Shelves(560, 640, 130, 20)
         Shelves(560, 640, 130, 20)
-        self.assertEqual(560, 560)
+        self.assertEqual(shelf.rect.x, 560)
+
+    def test_shelves2(self):
+        shelf = Shelves(560, 640, 130, 20)
+        Shelves(560, 640, 130, 20)
+        self.assertEqual(shelf.rect.y, 640)
 
     def test_database_order(self):
         data = SaveData(1)

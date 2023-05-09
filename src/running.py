@@ -30,7 +30,6 @@ class GameLoop:
         """
         self.start.startloop()
         self.main.add_sprites()
-        
 
 
 if __name__ == "__main__":

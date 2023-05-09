@@ -57,7 +57,6 @@ class PlatformJumpingGame():
         """
         self.background()
         self.more_backround()
-        self.new_loop()
 
     def background(self):
         """_Annetaan pelille nimi ja asetetaan näytön väri, ja piirretään pilvikuvioita
@@ -116,9 +115,9 @@ class PlatformJumpingGame():
         """
         shelf1 = Shelves(560, 620, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
-        shelf3 = Shelves(0, 760, 295, 20)   
+        shelf3 = Shelves(0, 760, 295, 20)
         shelf4 = Shelves(530, 370, 130, 20)
-        shelf5 = Shelves(390, 760, 485, 20)  
+        shelf5 = Shelves(390, 760, 485, 20)
         shelf6 = Shelves(100, 490, 130, 20)
         shelf7 = Shelves(400, 270, 130, 20)
         shelvelist = [shelf1, shelf2, shelf3, shelf4, shelf5, shelf6, shelf7]

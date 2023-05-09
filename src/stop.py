@@ -2,6 +2,7 @@
 import sys
 import pygame
 
+
 class StopScreen:
     """Luokka, joka vastaa lopetusnäytöstä
     Attribuutit:

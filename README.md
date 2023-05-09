@@ -1,10 +1,10 @@
-## Ohjelmistotekniikka 
+# Ohjelmistotekniikka 
 
 **Tasohyppelypeli**
 
 Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
-##
+## Dokumentointi
 
 
 [Arkkitehtuuri](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
@@ -20,7 +20,7 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 [Testikattavuus](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
 
 
-Väliversiot pelistä:
+**Väliversiot pelistä:**
 
 [Viikko5](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko5)
 

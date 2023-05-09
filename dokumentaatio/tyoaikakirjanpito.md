@@ -70,5 +70,10 @@
 - koodin rakenteen parantelua
 - aikaa n.4h
 
+9.5.2023
+- Koodikatselmoinnissa ja labtoolissa ilmenneiden epäselvyyksien korjaus
+- koodin valmistelu palautusta varten
+- aikaa n.4h
+
 Tämänhetkinen käytetty aika:
-n.62h
+n.66h

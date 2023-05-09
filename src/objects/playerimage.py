@@ -71,10 +71,10 @@ class Player(pygame.sprite.Sprite):
             self.acceleration.x -= 0.2
 
         if direction == "jump":
-            self.rect.x += 1
+            self.rect.y += 1
             collision = pygame.sprite.spritecollide(
                 self, self.mainplatform.shelves, False)
-            self.rect.x -= 1
+            self.rect.y -= 1
             if collision:
                 self.velocity.y = -15
                 collision = False

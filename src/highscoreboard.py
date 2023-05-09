@@ -61,7 +61,7 @@ class Board:
         order = 1
         y_koordinate = 290
         font3 = pygame.font.SysFont("Arial", 40)
-        for j in datalist:
+        for _ in datalist:
             text3 = font3.render(f"{order}. {j}", True, (255, 255, 255))
             self.screen4.blit(text3, (70, y_koordinate))
             order += 1

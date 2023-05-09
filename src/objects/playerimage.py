@@ -47,7 +47,6 @@ class Player(pygame.sprite.Sprite):
         )
 
         self.rect = self.user.get_rect()
-
         self.rect.center = (40, 690)
         self.position = VectorMoving(40, 690)
         self.velocity = VectorMoving(0, 0)

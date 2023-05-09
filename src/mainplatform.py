@@ -111,50 +111,32 @@ class PlatformJumpingGame():
         self.loop()
 
     def make_surfaces(self):
-        """Piirretään laudat omille paikoilleen Shelves-classin avulla
+        """Piirretään laudat omille paikoilleen Shelves-classin avulla. 
+        Shelf3 ja shel5 ovat pelin "lattian" osat.
         """
         shelf1 = Shelves(560, 620, 130, 20)
         shelf2 = Shelves(100, 200, 130, 20)
-        shelf3 = Shelves(0, 760, 295, 20)    # floor1
+        shelf3 = Shelves(0, 760, 295, 20)   
         shelf4 = Shelves(530, 370, 130, 20)
-        shelf5 = Shelves(390, 760, 485, 20)  # floor2
+        shelf5 = Shelves(390, 760, 485, 20)  
         shelf6 = Shelves(100, 490, 130, 20)
         shelf7 = Shelves(400, 270, 130, 20)
-        self.add_in_all_sprites(shelf1, shelf2, shelf3, shelf4)
-        self.other_half(shelf5, shelf6, shelf7)
+        shelvelist = [shelf1, shelf2, shelf3, shelf4, shelf5, shelf6, shelf7]
 
-    def add_in_all_sprites(self, shelf1, shelf2, shelf3, shelf4):
+        self.add_in_all_sprites(shelvelist)
+        self.add_in_shelves(shelvelist)
+
+    def add_in_all_sprites(self, shelvelist):
         """Lisätään osa laudoista kaikkien sprite.Grouppiin
         """
-        self.all_sprites.add(shelf1)
-        self.all_sprites.add(shelf2)
-        self.all_sprites.add(shelf3)
-        self.all_sprites.add(shelf4)
-        self.add_in_shelves(shelf1, shelf2, shelf3, shelf4)
+        for i in shelvelist:
+            self.all_sprites.add(i)
 
-    def other_half(self, shelf5, shelf6, shelf7):
-        """
-        Lisätään loputkin kaikkien sprite.Grouppiin
-        """
-        self.all_sprites.add(shelf5)
-        self.all_sprites.add(shelf6)
-        self.all_sprites.add(shelf7)
-        self.add_rest(shelf5, shelf6, shelf7)
-
-    def add_in_shelves(self, shelf1, shelf2, shelf3, shelf4):
+    def add_in_shelves(self, shelvelist):
         """Lisätään laudat omaan sprite.Grouppiin
         """
-        self.shelves.add(shelf1)
-        self.shelves.add(shelf2)
-        self.shelves.add(shelf3)
-        self.shelves.add(shelf4)
-
-    def add_rest(self, shelf5, shelf6, shelf7):
-        """Lisätään loputkin lautojen omaan yhteiseen sprite.Grouppiin
-        """
-        self.shelves.add(shelf5)
-        self.shelves.add(shelf6)
-        self.shelves.add(shelf7)
+        for i in shelvelist:
+            self.shelves.add(i)
 
     def draw_candy(self):
         """Piirretään karkki oman Candies-luokan avulla ja syötetään satunnaiset koordinaatit.

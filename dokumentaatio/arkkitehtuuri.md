@@ -1,5 +1,5 @@
-**Arkkitehtuurikuvaus**
-##
+# Arkkitehtuurikuvaus
+
 Kuvaus kansioista:
 - src:ssä sijaitsee käyttöliittymät ja pelin pyöritys
 - objects-kansiossa sijaitsee pelin elementit: pelaaja, hyppytasot sekä karkit
@@ -8,7 +8,7 @@ Tauluun tallennetaan jokaisen pelin jälkeen tulos kerätyistä karkeista. Viisi
 - images-kansiossa on pelaajaobjektin ladattu kuva, joka ladataan playerimage-tiedostoon.
 ##
 
-**Luokkakaavio:**
+## Luokkakaavio:
 
 ```mermaid
 
@@ -25,7 +25,7 @@ classDiagram
 
 ##
 
-**Sekvenssikaaviot:**
+## Sekvenssikaaviot:
 
 Sovelluksen pelinäkymä aloitusnäytöstä lopetusnäyttöön: (Huom! Tämä ei kuvaa tulosten tallennusta)
 
@@ -48,7 +48,7 @@ sequenceDiagram
    
 ```
  
- Karkkiin osuminen ja tulosten tallennus:
+ **Karkkiin osuminen ja tulosten tallennus:**
  
  Alla oleva sekvenssikaavio kuvaa sitä, kun karkkiin osuttaan kerran jonka jälkeen peli päättyy tippumalla lattiaraosta alas, 
  jonka jälkeen tallennetaan pelin tulos.
@@ -78,7 +78,7 @@ sequenceDiagram
  
  
  
- Tallennusnäkymä
+ **Tallennusnäkymä**
  
  Tallennusnäkymän sekvenssikaaviossa käsitellään vain tapahtuma, missä käyttäjä avaa pelin ja katsoo
  suurimmat tulokset.

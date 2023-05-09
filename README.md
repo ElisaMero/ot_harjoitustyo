@@ -26,6 +26,10 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
 [Viikko6](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko6)
 
+**Loppupalautus:**
+[Loppupalautus](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/loppupalautus)
+
+
 ##
 Poetryn lataaminen: poetry install
 

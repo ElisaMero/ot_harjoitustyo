@@ -6,10 +6,6 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
 ##
 
-[Viikko5](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko5)
-
-[Viikko6](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko6)
-
 
 [Arkkitehtuuri](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
@@ -21,6 +17,14 @@ Tasohyppelypeli, jossa ideana kerätä mahdollisimman paljon karkkeja.
 
 [Käyttöohjeet](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/kauttoohjeet.md)
 
+[Testikattavuus](https://github.com/ElisaMero/ot_harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
+
+
+Väliversiot pelistä:
+
+[Viikko5](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko5)
+
+[Viikko6](https://github.com/ElisaMero/ot_harjoitustyo/releases/tag/viikko6)
 
 ##
 Poetryn lataaminen: poetry install

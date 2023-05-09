@@ -22,3 +22,6 @@ Viikko6:
 - tietokannan toteutus SQL-kielellä 
 - käyttäjälle luotu tulostaulu, jossa näkee viisi suurinta pelitulosta järjestyksessä 
 - jokaisen pelin jälkeen tulos tallentuu tietokantaan
+
+Viikko7:
+- Koodin rakennetta yksinkertaistettu, lisätty docstringit sekä päivitetty peliä valmiiksi palautusta varten.

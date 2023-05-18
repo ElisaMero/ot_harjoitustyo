@@ -1,11 +1,11 @@
-**Tyoaikakirjanpito**
+**Työaikakirjanpito**
 
 24.3.2023
 - vaatimusmaarittelyn luonti ja pelin ideointi
 - aikaa n.1h
 
 31.3.2023
-- pelikoodin aloitus, nayton avautuminen ja elementin luonti
+- pelikoodin aloitus, näytön avautuminen ja elementin luonti
 - aikaa: n.3h
 
 1.4.2023
@@ -13,7 +13,7 @@
 - aikaa n.4h
 
 2.4.2023
-- pelaajan hahmo muokattu grafiikkaa muutettu
+- pelaajan hahmo muokattu, grafiikkaa muutettu
 - aikaa n.4h
 
 3.4.2023
